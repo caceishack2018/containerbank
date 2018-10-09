@@ -1,6 +1,10 @@
 # Bienvenue au Hackathon PackApp !
 
+<<<<<<< HEAD
 caceis2sdqqdsds
+=======
+caceis
+>>>>>>> 5b9fe9853bd26b384f9f5471d44db9b0399624a8
 
 L’objectif principal est de conteneuriser et API-ser l’application containerbank afin de pouvoir la déployer sur le CaaS AWS. Vous l'avez compris, vous devrez découper l'application de la plus belle façon qui soit . Consignes générales : 
 - :heavy_check_mark: **L’application doit être fonctionnelle**, c’est-à-dire couvrir tous les use cases exposés ci-après
