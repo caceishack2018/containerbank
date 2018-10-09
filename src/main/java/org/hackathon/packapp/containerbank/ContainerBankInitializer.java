@@ -56,6 +56,7 @@ public class ContainerBankInitializer extends AbstractDispatcherServletInitializ
         XmlWebApplicationContext rootAppContext = new XmlWebApplicationContext();
         rootAppContext.setConfigLocations("classpath:spring/business-config.xml", "classpath:spring/tools-config.xml");
         rootAppContext.getEnvironment().setDefaultProfiles(SPRING_PROFILE);
+        System.out.println("test");
         return rootAppContext;
     }
 
