@@ -456,14 +456,13 @@
         </profile>
         <profile>
             <id>MySQL</id>
-            <properties>
-                <db.script>mysql</db.script>
-                <jpa.database>MYSQL</jpa.database>
-                <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-                <jdbc.url>jdbc:mysql://localhost:3306/containerbank?serverTimezone=GMT</jdbc.url>
-                <jdbc.username>root</jdbc.username>
-                <jdbc.password>root</jdbc.password>
-            </properties>
+           <properties>
+				    <jpa.database>MYSQL</jpa.database>
+				    <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
+				    <jdbc.url>jdbc:mysql://localhost:3306/containerbank?useUnicode=true</jdbc.url>
+				    <jdbc.username>root</jdbc.username>
+				    <jdbc.password></jdbc.password>
+				</properties>
             <dependencies>
                 <dependency>
                     <groupId>mysql</groupId>
