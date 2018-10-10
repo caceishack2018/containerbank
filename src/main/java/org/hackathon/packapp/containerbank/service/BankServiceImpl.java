@@ -2,10 +2,14 @@
 package org.hackathon.packapp.containerbank.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.hackathon.packapp.containerbank.model.Customer;
 import org.hackathon.packapp.containerbank.model.Card;
 import org.hackathon.packapp.containerbank.model.CardType;
@@ -17,6 +21,7 @@ import org.hackathon.packapp.containerbank.repository.AdvisorRepository;
 import org.hackathon.packapp.containerbank.repository.PaymentRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Mostly used as a facade for all ContainerBank controllers
@@ -88,7 +93,15 @@ public class BankServiceImpl implements BankService {
     @Transactional(readOnly = true)
     @Cacheable(value = "advisors")
     public Collection<Advisor> findAdvisors() throws DataAccessException {
-        return advisorRepository.findAll();
+    	RestTemplate restTemplate = new RestTemplate();
+    	ResponseEntity<Collection<Advisor>> response = restTemplate.exchange(
+    	  "https://monapp05.hackathon-container.com/AdvisorRest/advisors",
+    	  HttpMethod.GET,
+    	  null,
+    	  new ParameterizedTypeReference<Collection<Advisor>>(){});
+    	Collection<Advisor>  employees = response.getBody();
+    	System.out.println("OK TESTED");
+    	return employees;
     }
 
 	@Override
