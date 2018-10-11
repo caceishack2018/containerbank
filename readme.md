@@ -25,6 +25,11 @@ git clone https://github.com/caceishack2018/
 - un containerbank pour le site en en hsql avec la majorité des fonctionnalités
 - un site (advisorRest) exposant un service rest appelant un pod mysql avec base de données persistante.
 
+Les fichiers de configurations sont sous le projet AdvisorRest :
+- dck_container pour la partie FRONT.
+- dck_advisorrest pour la partie API.
+- dck_mysql pour la DB
+
 ```
 ## Reste à faire
 - Sortir les autres services en REST (Customer, Card, Payment)
