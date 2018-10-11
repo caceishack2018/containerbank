@@ -29,5 +29,5 @@ git clone https://github.com/caceishack2018/
 ## Reste à faire
 - Sortir les autres services en REST (Customer, Card, Payment)
 - Intégrer les services REST au site containerbank et supprimer le hsql.
-- Gérer le monitoring et les logs
+- Gérer le monitoring et les logs : On a pensé à utliser la sortie standard avec un daemon syslog mais on n'a pas eu le temps de l'implémenter.
 
